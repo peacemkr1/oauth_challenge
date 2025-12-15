@@ -136,7 +136,6 @@ app.get('/dashboard', (req, res) => {
     
     res.send(content);
 });
-
 app.get('/hints', (req, res) => {
     res.send(`
         <h2>Hint</h2>
@@ -147,9 +146,12 @@ app.get('/hints', (req, res) => {
         <h3>Example Tokens:</h3>
         <p><strong>Regular User (user_id=2):</strong> <code>${generateToken('2')}</code></p>
         <hr>
-        <h3>Hint:</h3>
-        <p>/inject-token?token=</p>
         <br>
+        <details>
+            <summary><strong>Another hint</strong></summary>
+            <code>/inject-token?token=</code>
+        </details>
+        <br><br>
         <a href="/">Home</a>
     `);
 });
