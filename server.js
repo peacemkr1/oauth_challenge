@@ -54,7 +54,7 @@ app.get('/login', (req, res) => {
             <input name="password" type="password" required><br><br>
             <button type="submit">Login</button>
         </form>
-        <p><small>Hint: Try username=user, password=password</small></p>
+        <p><small>Try username=user you can figure out the next part</small></p>
     `);
 });
 
@@ -130,7 +130,7 @@ app.get('/dashboard', (req, res) => {
     
     content += `
         <br>
-        <a href="/debug">Debug Info</a> | 
+        <a href="/hints">hints</a> | 
         <a href="/logout">Logout</a>
     `;
     
@@ -139,7 +139,7 @@ app.get('/dashboard', (req, res) => {
 
 app.get('/hints', (req, res) => {
     res.send(`
-        <h2>Debug Information</h2>
+        <h2>Hint</h2>
         <hr>
         <h3>Token Generation Pattern:</h3>
         <p>Tokens are MD5 hash of: <code>"token_" + user_id</code></p>
@@ -149,7 +149,6 @@ app.get('/hints', (req, res) => {
         <hr>
         <h3>Hint:</h3>
         <p>/inject-token?token=</p>
-        <p>Try calculating MD5("token_1") yourself!</p>
         <br>
         <a href="/">Home</a>
     `);
